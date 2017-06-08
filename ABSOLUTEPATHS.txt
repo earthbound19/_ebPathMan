@@ -1,0 +1,2 @@
+C:\AnAbsolutePath
+C:\another_absolute_path\a_subpath
