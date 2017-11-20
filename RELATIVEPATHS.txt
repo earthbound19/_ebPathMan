@@ -1,3 +1,6 @@
+# This is an example file.
+# Create a file like this in any toolchain folder (and/or subfolders) you wish to make available to gde.sh.:
+
 aDirInAdir
 aDirInThisRepo/ifYouAddOne
 someBinDirInAnyPathYouCallThisScriptFrom
