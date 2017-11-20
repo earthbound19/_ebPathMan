@@ -1,7 +1,20 @@
-# ADDS THE CURRENT path to your ~./bash_profile. Must be run with admin priveleges (e.g. sudo on mac or various linux). NOTE that after this has been done for the path which containst this script, since this script is then in the path, the same can be done by calling this script (from any other path).
+# DESCRIPTION
+# ADDS THE CURRENT path permanently to your $PATH. Possibly must be run with admin priveleges (e.g. sudo on mac or various linux). NOTE that after this has been done for the path which contains this script, since this script is then in the path, the same can be done from any other path, by calling this script.
 
+# USAGE
+# ./thisScript.sh
+
+# TO DO:
+# Adapt to this fact: "You should use ~/.profile instead." Re: https://askubuntu.com/questions/510709/i-cannot-find-bash-profile-in-ubuntu
+# - How to use that instead/or? Deduce platform by existence or non-existence of platform-specific envrionment variables--and alter path by platform-specific methods?
+# Re: https://ss64.com/nt/syntax-variables.html
+# For windows: %SYSTEMROOT%?
+# For macOS: ?
+# For linux: ? specifics for different distros e.g. lubuntu? Can get all via `printenv > env.txt`. Candidates? : DEFAULTS_PATH, PATH, DESKTOP_SESSION, HOME, LOGNAME
+
+
+# CODE
 thisDir=`pwd`
-# echo thisDir value is\: $thisDir
 
 # IF THERE IS no .bash_profile in the home dir, create one:
 if [ ! -a ~/.bash_profile ]
