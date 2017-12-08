@@ -11,7 +11,7 @@
 # -- which will permanently add the path of this script to your user ~/.bash_profile. Per the instructions in that script, you may then need to run this command to manually reload your shell with the new $PATH:
 # source ~/.bash_profile
 # AFTER THAT STEP, you may conveniently include any toolchain paths specified in any ./RELATIVEPATHS.txt file (in any directory) by invoking the following command:
-# thisScript.sh
+# source thisScript.sh
 
 # TO DO:
 # Have script check platform and replace stupid Windows \ with / if 'nix platform.
