@@ -11,5 +11,5 @@ For now (if not always), refer to comments in that and other scripts in this rep
 PathEditor.exe is handy-dandy. It has a GUI. Double-click the program and you'll see. I didn't create this tool.
 
 ## TO DO
-Documentation this toolset clearly.
+Document this toolset more clearly.
 
