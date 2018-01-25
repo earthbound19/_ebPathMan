@@ -1,1 +1,2 @@
-D:\Ussins\Alex\Programming\Instagram_API__myTweak\examples
+C:\An\Example\Path
+C:\Another\Example\Path
