@@ -13,42 +13,48 @@
 # AFTER THAT STEP, you may conveniently include any toolchain paths specified in any ./RELATIVEPATHS.txt file (in any directory) by invoking the following command:
 # source getDevEnv.sh
 
-# DEV NOTES
-# I had the done < RELATIVEPATHS.txt line reading from that file as ./RELATIVEPATHS.txt; why I don't know: maybe it needs that on some platforms and not on others? TO DO: check on different platforms.
-
 # TO DO:
 # Have script check platform and replace stupid Windows \ with / if 'nix platform.
 
+
+# CODE
 _pwd_=$(pwd)
 
-while read -r line
+while IFS= read -r line || [ -n "$line" ]
 do
-	# echo --
-	# addPathToDir="$_pwd_"/"$line"
-	# echo addPathToDir value\:
-	# echo $addPathToDir
-	# echo ~~
-	echo adding path to \$PATH\:
-	echo $line
-	export PATH="$PATH:$addPathToDir"
-# MAYBE NEEDED on some platforms and not others: ./ before read file? :
-# done < ./RELATIVEPATHS.txt
+    echo --
+	addPathToDir="$_pwd_"/"$line"
+    # echo addPathToDir value\:
+    # echo $addPathToDir
+    # echo ~~
+    # echo adding path to \$pathsAppendString\:
+    # echo $line
+  pathsAppendString="$pathsAppendString":"$addPathToDir"
 done < RELATIVEPATHS.txt
+  # 
+  # echo --~~
+  # echo all paths to export are\:
+  # echo $pathsAppendString
 
-# echo
-# echo ----
-# echo TEMPORARY ENVIRONMENT PATHS SET DONE. The new \$PATH is\:
-# echo $PATH
-# echo
-# echo You may test the new environment for visibility of a script in the paths you just added by executing the command\:
-# echo
-# echo which scriptName.sh
-# echo
-# echo "NOTE: if the PATH to a script exists in your \$PATH (try the command 'echo \$PATH' to see if the containing folder of that script is indeed in your \$PATH), but the script does not appear via 'which scriptName.sh', there may be permission problems\, and if so ensure that all .sh files in your intended PATHS are executable."
-# echo
+# WORKING REFERENCE COMMAND:
+# export PATH="$PATH:/Users/earthbound/Documents/breakTime/_ebdev/scripts"
+export PATH="$PATH":"$pathsAppendString"
+
+echo
+echo ----
+echo TEMPORARY ENVIRONMENT PATHS SET DONE. The new \$PATH is\:
+echo $PATH
+echo
+echo You may test the new environment for visibility of a script in the paths you just added by executing the command\:
+echo
+echo which scriptName.sh
+echo
+echo "NOTE: if the PATH to a script exists in your \$PATH (try the command 'echo \$PATH' to see if the containing folder of that script is indeed in your \$PATH), but the script does not appear via 'which scriptName.sh', there may be permission problems\, and if so ensure that all .sh files in your intended PATHS are executable. _ebPathMan/chmodPlusExecAllSH.sh may help."
+echo
+
 
 # HISTORY
-
+# 2018-02-12 Mystified at why this didn't work and now it does (on Mac) after haggling with it.
 # BEFORE NOW
 # Things.
 # 2017 apr 12 refactored for better cross-platform compatibility.
