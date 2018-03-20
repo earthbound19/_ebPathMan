@@ -1,14 +1,32 @@
 # DESCRIPTION
-# Sets up a lot of temporary, customizable project paths for development. This script reads a list of project root paths from ~/projectsRootPaths.txt, and navigates to each of them in turn and invokes getDevEnv.sh for that path
+# Sets up a lot of temporary, customizable project paths for development. This script reads a list of project root paths from ~/projectsRootPaths.txt, and navigates to each of them in turn and invokes getDevEnv.sh for each. This in turn reads any expected RELATIVEPATHS.txt in each and adds all paths listed in that to the $PATH as well.
 
-# THIS IS A STUB. IN DEVELOPMENT.
+# USAGE
+# source ./thisScript.sh
 
-while read -r element
+# NOTES
+# The paths in RELATIVEPATHS.txt must be relative to the home path ~, which this script explicitly invokes before each path when changing directories. ALSO, unless you invoke this script via `source` as given under USAGE, the temporarily modified $PATH won't "stick."
+
+# DEPENDENCIES
+# A nix' environment. This script must first be in your $PATH via manual add to ~/.bash_profile etc. or adding in on the command line, or invoking this script from the path containing it. A file ~/projectsRootPaths.txt with all desired root paths listed in it.
+
+
+# CODE
+# Save current path to come back to later:
+echo Saving current path with `pushd .` . . .
+pushd .
+
+while IFS= read -r element || [ -n "$element" ]
 do
-  echo $element
+  echo =======================
+  echo changing current directory \(cd\) to $element . . .
+  cd ~/$element
+    # ls
+  source getDevEnv.sh $element
+  echo -----------------------
 done < ~/projectsRootPaths.txt
 
+popd
 
-# TANGENT: you can determine platform with the following commands:
-# uname
-# echo $OSTYPE
+echo -~-~-~-~
+echo DONE. getDevEnv.sh has been run with each path listed in ~/projectsRootPaths.txt, respectively.
