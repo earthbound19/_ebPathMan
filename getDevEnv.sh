@@ -20,6 +20,10 @@
 # CODE
 _pwd_=$(pwd)
 
+# Before adding subpaths via RELATIVEPATHS.txt, add the current path:
+export PATH="$PATH":"$_pwd_"
+
+# Loop over RELATIVEPATHS.txt and add paths listed in it to $PATH:
 while IFS= read -r line || [ -n "$line" ]
 do
     echo --
@@ -54,6 +58,7 @@ echo
 
 
 # HISTORY
+# 2018-02-13 Add current path before iterating over RELATIVEPATHS.txt
 # 2018-02-12 Mystified at why this didn't work and now it does (on Mac) after haggling with it.
 # BEFORE NOW
 # Things.
