@@ -15,6 +15,7 @@
 
 # TO DO:
 # Have script check platform and replace stupid Windows \ with / if 'nix platform.
+# Also make sure on 'nixy platforms that paths have a leading / (forward slash).
 
 
 # CODE
@@ -22,27 +23,16 @@ _pwd_=$(pwd)
 
 # Before adding subpaths via RELATIVEPATHS.txt, add the current path:
 export PATH="$PATH":"$_pwd_"
-
 # Loop over RELATIVEPATHS.txt and add paths listed in it to $PATH:
 while IFS= read -r line || [ -n "$line" ]
 do
     echo --
 	addPathToDir="$_pwd_"/"$line"
-    # echo addPathToDir value\:
-    # echo $addPathToDir
-    # echo ~~
-    # echo adding path to \$pathsAppendString\:
-    # echo $line
-  pathsAppendString="$pathsAppendString":"$addPathToDir"
+    echo addPathToDir value\:
+    echo $addPathToDir
+    echo EXPORTING THAT\!
+  export PATH=$addPathToDir:$PATH
 done < RELATIVEPATHS.txt
-  # 
-  # echo --~~
-  # echo all paths to export are\:
-  # echo $pathsAppendString
-
-# WORKING REFERENCE COMMAND:
-# export PATH="$PATH:/Users/earthbound/Documents/breakTime/_ebdev/scripts"
-export PATH="$PATH":"$pathsAppendString"
 
 echo
 echo ----
@@ -58,6 +48,7 @@ echo
 
 
 # HISTORY
+# 2018-04-17 It wasn't working? Fixed (by simplifying?) and path ordering in final $PATH better.
 # 2018-02-13 Add current path before iterating over RELATIVEPATHS.txt
 # 2018-02-12 Mystified at why this didn't work and now it does (on Mac) after haggling with it.
 # BEFORE NOW

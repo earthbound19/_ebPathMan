@@ -18,12 +18,12 @@ pushd .
 
 while IFS= read -r element || [ -n "$element" ]
 do
-  echo =======================
-  echo changing current directory \(cd\) to $element . . .
+    echo =======================
   cd ~/$element
+    # echo listing contents of $element . . .
     # ls
   source getDevEnv.sh $element
-  echo -----------------------
+    echo -----------------------
 done < ~/projectsRootPaths.txt
 
 popd
