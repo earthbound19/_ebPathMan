@@ -9,14 +9,14 @@
 
 
 # CODE
-find . -name '*.sh' -o -name '*.py' -o -name '*.bat' -o -name '*.exe' -print0 | xargs -0 chmod +x
+find . -name '*.sh' -o -name '*.py' -print0 | xargs -0 chmod +x
 
 # Re: https://stackoverflow.com/a/1580644
 find . -type d -exec chmod a+rwx {} \;
 find . -type f -exec chmod a+rw {} \;
 
 # Re: https://stackoverflow.com/a/24704900/1397555
-for f in `find . -name '*.sh' -o -name '*.py' -o -name '*.bat' -o -name '*.exe'`
+for f in `find . -name '*.sh' -o -name '*.py'`
 do
  git update-index --chmod=+x $f
 done
