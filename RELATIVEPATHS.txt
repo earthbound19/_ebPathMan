@@ -1,9 +1,6 @@
 # This is an example file.
 # Create a file like this in any toolchain folder (and/or subfolders) you wish to make available to gde.sh.:
 
-# TO DO
-# Make this consistent. gde.sh or getAllDevEnvs.sh? Favoring the latter right now. And didn't I decide the former is getDevEnv.sh?
-
 aDirInAdir
 aDirInThisRepo/ifYouAddOne
 someBinDirInAnyPathYouCallThisScriptFrom

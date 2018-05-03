@@ -63,8 +63,8 @@ REM =========================
 
 
 REM DEVELOPMENT HISTORY:
-REM 2015 09 25? -- First version?
-REM 2015-11-12 Bug fix to include necessary paths on run (had assumed so many .exes were in the same path.
+REM 2017 06 07 08:31:11 PM Refactored to operate on relative paths in RELATIVEPATHS.txt (as opposed to absolute) --it will prepend the current (wherever this repo is extracted) to the RELATIVEPATHS for every path mod operation. It will also load and make path change operations based on any RELATIVEPATHS.txt local to whatever directory this script is executed from (after this script itself has been added to the system or user PATH). Renamed BINPATHS.txt to RELATIVEPATHS.txt and EXTERNALPATHS to ABSOLUTEPATHS.txt
+REM 2017 05 31 10:17:59 AM severely minor tweaks
 REM 2015-12-20 Add bug comment to comments at start of file
-REM 05/31/2017 10:17:59 AM severely minor tweaks
-REM 06/07/2017 08:31:11 PM Refactored to operate on relative paths in RELATIVEPATHS.txt (as opposed to absolute) --it will prepend the current (wherever this repo is extracted) to the RELATIVEPATHS for every path mod operation. It will also load and make path change operations based on any RELATIVEPATHS.txt local to whatever directory this script is executed from (after this script itself has been added to the system or user PATH). Renamed BINPATHS.txt to RELATIVEPATHS.txt and EXTERNALPATHS to ABSOLUTEPATHS.txt
+REM 2015-11-12 Bug fix to include necessary paths on run (had assumed so many .exes were in the same path.
+REM 2015 09 25? -- First version?
