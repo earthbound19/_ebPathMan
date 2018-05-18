@@ -20,9 +20,12 @@
 
 # CODE
 _pwd_=$(pwd)
-
+# echo _pwd_ value is\: $_pwd_
 # Before adding subpaths via RELATIVEPATHS.txt, add the current path:
 export PATH="$PATH":"$_pwd_"
+# echo Added _pwd_ value to \$PATH\: \$PATH value is now\:
+# echo $PATH
+
 # Loop over RELATIVEPATHS.txt and add paths listed in it to $PATH:
 while IFS= read -r line || [ -n "$line" ]
 do
