@@ -5,7 +5,7 @@
 # source ./thisScript.sh
 
 # NOTES
-# The paths in RELATIVEPATHS.txt must be relative to the home path ~, which this script explicitly invokes before each path when changing directories. ALSO, unless you invoke this script via `source` as given under USAGE, the temporarily modified $PATH won't "stick."
+# The paths in RELATIVEPATHS.txt must be findable by the operating system if preceded only with a forwared slash /. ALSO, unless you invoke this script via `source` as given under USAGE, the temporarily modified $PATH won't "stick." SEE ALSO "DEPENDENCIES."
 
 # DEPENDENCIES
 # A nix' environment. This script must first be in your $PATH via manual add to ~/.bash_profile etc. or adding in on the command line, or invoking this script from the path containing it. A file ~/projectsRootPaths.txt with all desired root paths listed in it.
@@ -19,9 +19,9 @@ pushd .
 while IFS= read -r element || [ -n "$element" ]
 do
     echo =======================
-  cd ~/$element
-    # echo listing contents of $element . . .
-    # ls
+  cd /$element
+    echo listing contents of $element . . .
+    ls
   source getDevEnv.sh
     echo -----------------------
 done < ~/projectsRootPaths.txt
