@@ -22,7 +22,7 @@ do
   cd ~/$element
     # echo listing contents of $element . . .
     # ls
-  source getDevEnv.sh $element
+  source getDevEnv.sh
     echo -----------------------
 done < ~/projectsRootPaths.txt
 
