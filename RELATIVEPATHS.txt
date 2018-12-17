@@ -2,8 +2,10 @@
 # Create a file like this in any toolchain folder (and/or subfolders) you wish to make available to gde.sh.:
 
 aDirInAdir
-aDirInThisRepo/ifYouAddOne
+aDirInThisRepo\ifYouAddOne
 someBinDirInAnyPathYouCallThisScriptFrom
-anyDir/anySubdir
+anyDir\anySubdir
 someOtherBinDir
 aProgramDir
+
+# -- and use it with getDevEnv.sh and/or getAllDevEnvs.sh and/or _setBinPaths.bat (the former two for Cygwin/nixy' envrionments, the latter for Windows). The former two will temporarily modify your path to include all directories in your toolset (for example as in the above list). The latter will, if run from an Administrator command prompt on Windows--it will permanently add those paths to your %PATH% environment (system) variable.

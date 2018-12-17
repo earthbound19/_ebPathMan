@@ -3,7 +3,7 @@
 
 # USAGE
 # CD to the dir containing this script, and execute the command:
-# source ./thisScript.sh
+# source ./getDevEnv.sh
 #
 # SUGGESTED USAGE
 # TO MAKE THE PATH which contains this script available in your path automagically on terminal launch, from this directory first run:
@@ -14,8 +14,7 @@
 # source getDevEnv.sh
 
 # TO DO:
-# Have script check platform and replace stupid Windows \ with / if 'nix platform.
-# Also make sure on 'nixy platforms that paths have a leading / (forward slash).
+# Have script replace any \ with /. Modify all toolsets that use this script to define paths with / and assume this script will correct that on the fly.
 
 
 # CODE
@@ -30,11 +29,13 @@ export PATH="$PATH":"$_pwd_"
 while IFS= read -r line || [ -n "$line" ]
 do
     echo --
+	# There is so much wrong with the following necessity: reverse windows backslashes, trim windows newlines so that the result isn't clobbered:
+	line=`echo $line | gsed 's/\\\\/\//g' | tr -d '\15\32'`
 	addPathToDir="$_pwd_"/"$line"
     echo addPathToDir value\:
     echo $addPathToDir
     echo EXPORTING THAT\!
-  export PATH=$addPathToDir:$PATH
+    export PATH=$addPathToDir:$PATH
 done < RELATIVEPATHS.txt
 
 echo
