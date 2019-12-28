@@ -1,4 +1,2 @@
-C:\ItIsOkay\_setBinPathsDotBat\checksForApathBeforeAdding
+C:\YouCanIncludeNonexistentPaths\because\_setBinPathsDotBat\checksForApathBeforeAdding
 C:\An\Example\Path
-C:\Another\Example\Path
-C:\Python27
