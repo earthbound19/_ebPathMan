@@ -66,7 +66,7 @@ REM NOTE: without the quote marks on the next line, it won't add directories tha
 REM END ABSOLUTE PATHS management
 REM =========================
 
-DEL temp_W6CyuJ5aCCRGV4.txt allPathsTemp_apzQT6sZHA5dm6.txt tmp_ABSOLUTEPATHS_29HN7TMFWKHYPj.txt
+DEL temp_W6CyuJ5aCCRGV4.txt allPathsTemp_apzQT6sZHA5dm6.txt tmp_ABSOLUTEPATHS_9nJbHt5WqaqdaS.txt tmp_ABSOLUTEPATHS_29HN7TMFWKHYPj.txt
 
 
 REM DEVELOPMENT HISTORY:
