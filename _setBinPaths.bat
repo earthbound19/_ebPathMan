@@ -28,6 +28,9 @@ REM other platforms (which might have caused non-windows line endings) :
 unix2dos allPathsTemp_apzQT6sZHA5dm6.txt
 
 SET CURRDIR=%CD%
+REM Because the root of project folders is also often wanted:
+modpath.exe /add %CURRDIR%
+ECHO Added root project folder to path: %CURRDIR%
 
 setlocal enabledelayedexpansion
 FOR /F "delims=*" %%A IN (allPathsTemp_apzQT6sZHA5dm6.txt) DO (
