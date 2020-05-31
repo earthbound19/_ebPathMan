@@ -19,39 +19,21 @@
 
 # CODE
 _pwd_=$(pwd)
-# echo _pwd_ value is\: $_pwd_
 # Before adding subpaths via RELATIVEPATHS.txt, add the current path:
 export PATH="$PATH":"$_pwd_"
-# echo Added _pwd_ value to \$PATH\: \$PATH value is now\:
-# echo $PATH
 
 # Loop over RELATIVEPATHS.txt and add paths listed in it to $PATH:
 while IFS= read -r line || [ -n "$line" ]
 do
-    echo --
 	# There is so much wrong with the following necessity: reverse windows backslashes, trim windows newlines so that the result isn't clobbered:
 	line=`echo $line | gsed 's/\\\\/\//g' | tr -d '\15\32'`
 	addPathToDir="$_pwd_"/"$line"
-    echo addPathToDir value\:
-    echo $addPathToDir
-    echo EXPORTING THAT\!
     export PATH=$addPathToDir:$PATH
 done < RELATIVEPATHS.txt
 
-echo
-echo ----
-echo TEMPORARY ENVIRONMENT PATHS SET DONE. The new \$PATH is\:
-echo $PATH
-echo
-echo You may test the new environment for visibility of a script in the paths you just added by executing the command\:
-echo
-echo which scriptName.sh
-echo
-echo "NOTE: if the PATH to a script exists in your \$PATH (try the command 'echo \$PATH' to see if the containing folder of that script is indeed in your \$PATH), but the script does not appear via 'which scriptName.sh', there may be permission problems\, and if so ensure that all .sh files in your intended PATHS are executable. _ebPathMan/chmodPlusExecAllSH.sh may help."
-echo
-
 
 # HISTORY
+# 2020-01-14 delete cluttered echo statements.
 # 2018-04-17 It wasn't working? Fixed (by simplifying?) and path ordering in final $PATH better.
 # 2018-02-13 Add current path before iterating over RELATIVEPATHS.txt
 # 2018-02-12 Mystified at why this didn't work and now it does (on Mac) after haggling with it.

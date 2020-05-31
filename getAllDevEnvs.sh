@@ -13,20 +13,19 @@
 
 # CODE
 # Save current path to come back to later:
-echo Saving current path with `pushd .` . . .
+# echo Saving current path with `pushd .` . . .
 pushd .
 
 while IFS= read -r element || [ -n "$element" ]
 do
-    echo =======================
+    # echo =======================
   cd /$element
-    echo listing contents of $element . . .
-    ls
+    # echo listing contents of $element . . .
+    # ls
   source getDevEnv.sh
-    echo -----------------------
+    # echo -----------------------
 done < ~/projectsRootPaths.txt
 
 popd
 
-echo -~-~-~-~
-echo DONE. getDevEnv.sh has been run with each path listed in ~/projectsRootPaths.txt, respectively.
+echo "~ getDevEnv.sh has been run with each path listed in ~/projectsRootPaths.txt, respectively."
