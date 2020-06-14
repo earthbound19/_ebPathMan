@@ -10,6 +10,10 @@ For now (if not always), refer to comments in that and other scripts in this rep
 
 `PathEditor.exe` is handy-dandy. It has a GUI. Double-click the program and you'll see. I didn't create this tool.
 
+`setenv.exe` is great for creating new system (or any context) environment varaibles with their values. I think I got it [from here](https://www.codeproject.com/Articles/12153/SetEnv).
+
+I'm trying to figure out where I found `modpath.exe`. It's great for adding to the system PATH environment variable.
+
 `gsed.exe`, `gsort.exe`, and `guniq.exe` in this repository are from MSYS2 (I'm unsure whether they run under 32-bit _and_ 64-bit Windows--I know they run under 64), but are renamed. If previous versions remain in git history, they may be from GnuWin32 and Cygwin.
 
 `sed.exe` from Cygwin (which I had here as `gsed.exe` for a long time) causes problems interacting with other utilities if they expect unix line endings, as Cygwin's sed uses Windows line endings.
