@@ -6,7 +6,7 @@
 
 # TO DO:
 # Adapt to this fact: "You should use ~/.profile instead." Re: https://askubuntu.com/questions/510709/i-cannot-find-bash-profile-in-ubuntu
-# - How to use that instead/or? Deduce platform by existence or non-existence of platform-specific envrionment variables--and alter path by platform-specific methods?
+# - How to use that instead/or? Deduce platform by existence or non-existence of platform-specific environment variables--and alter path by platform-specific methods?
 # Re: https://ss64.com/nt/syntax-variables.html
 # For windows: %SYSTEMROOT%?
 # For macOS: ?
