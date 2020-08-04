@@ -11,9 +11,10 @@
 #    source ~/.bash_profile
 # After that step, you may conveniently include any toolchain paths specified in any ./RELATIVEPATHS.txt file (in any directory) by invoking the following command:
 #    source getDevEnv.sh
-# See also getAllDevEnvs.sh, which invokes this script repeatedly against a list of folders.
-# NOTE
-# This script is written with the intent that the path containing it be included in your $PATH envrionment variable via manual add to ~/.bash_profile etc. But you may also add the path containing this script manually to $PATH via the terminal (by running the command PATH=/path/to_this_script/:$PATH, or open a terminal to the path containing this script (or a copy of it), and run it from that directory.
+# NOTES
+# - SEE ALSO getAllDevEnvs.sh, which invokes this script repeatedly against a list of folders.
+# - This script is written with the intent that the path containing it be included in your $PATH environment variable via manual add to ~/.bash_profile etc. But you may also add the path containing this script manually to $PATH via the terminal (by running the command PATH=/path/to_this_script/:$PATH, or open a terminal to the path containing this script (or a copy of it), and run it from that directory.
+# - Directory paths are added dynamically to $PATH _before_ it, so that any executables or scripts etc. in the paths added (via this script) will be found by the terminal before files of the same name that may appear in other paths, and the terminal will use the ones first found (they will have precedence).
 
 
 # CODE
