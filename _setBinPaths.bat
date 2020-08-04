@@ -25,11 +25,9 @@ ECHO OFF
 :: DEVELOPER NOTES
 :: Without the quote marks around path names it add directories that include spaces ( ). It will work if the first %%A doesn't have quote marks (and will mess up sorting if they do, it seems--odd).
 
-:: Wipe log for new run; it's beyond silly that I haven't found a way to echo nothing to a new file:
+:: Wipe log for new run:
+type NUL > setPathsLog.txt
 ECHO    ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
-ECHO Blanking log file . . .
-COPY NUL setPathsLog.txt
-
 :: START RELATIVE PATHS MANAGEMENT
 ECHO %PATH% > PATH_backup.txt
 :: fix potential line ending problems if copied files were modified on other platforms (which might have caused non-windows line endings) ; re: https://stackoverflow.com/a/27844521/1397555
