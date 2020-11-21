@@ -38,4 +38,4 @@ Open a terminal to the path you have cloned it into, and examine the comments in
 - `_addToSystemPATH.bat`
 - `modpath.exe` is great for adding to the system PATH environment variable. I found it in the uninstall folder of ImageMagick for Windows, but I don't know where it is from originally (if not from ImageMagick). The `_addToSystemPATH.bat` script uses `modpath.exe`.
 - `PathEditor.exe` is a handy-dandy application with a graphical user interface that makes editing environment variables easy. I didn't create this tool.
-- `setenv.exe` is great for creating new system (or any context) environment varaibles with their values. I think I got it [from here](https://www.codeproject.com/Articles/12153/SetEnv).
+- `setenv.exe` is great for creating new system (or any context) environment variables with their values. I think I got it [from here](https://www.codeproject.com/Articles/12153/SetEnv).
