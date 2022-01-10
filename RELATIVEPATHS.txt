@@ -1,7 +1,0 @@
-aDirInAdir
-aDirInThisRepo\ifYouAddOne
-someBinDirInAnyPathYouCallThisScriptFrom
-anyDir\anySubdir
-someOtherBinDir
-aProgramDir
-tmpBlargh

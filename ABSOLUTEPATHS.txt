@@ -1,3 +1,0 @@
-C:\_ebPathMan
-C:\YouCanIncludeNonexistentPaths\because\_setBinPathsDotBat\checksForApathBeforeAdding
-C:\An\Example\Path
