@@ -36,8 +36,11 @@ done < RELATIVEPATHS.txt
 
 
 # HISTORY
-# 2020-08-03
-# - gsed -> sed (as dependency included in many Unixy environments or emulated environments)
+
+# ????-??-?? [and documented much later by patching a log from one branch to another]
+# - REMOVE sed.exe et al, via script updates to no longer use them?? I don't remember how/why. 
+# 2020-08-03 [yet documented much later by patching this log from one branch to another]
+# - change gsed.exe [back??] to sed.exe (as dependency included in many Unixy environments or emulated environments)
 # - put custom path includes before $PATH
 # - improve doc comments
 # 2020-01-14 delete cluttered echo statements.
@@ -46,6 +49,6 @@ done < RELATIVEPATHS.txt
 # 2018-02-12 Mystified at why this didn't work and now it does (on Mac) after haggling with it.
 # BEFORE NOW
 # Things.
-# 2017 apr 12 refactored for better cross-platform compatibility.
+# 2017-04-12 refactored for better cross-platform compatibility.
 # 2017-06-07 Tweaked for new repo with this toolset and fixed up comments for clarity.
 # 2017-11-20 reworked comments with SUGGESTED USAGE for clarity, for my own sake ;) and others'.
